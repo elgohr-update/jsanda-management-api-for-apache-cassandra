@@ -13,7 +13,7 @@ jobs:
       - name: Build Management API in docker
         run: docker build -t management-api-for-apache-cassandra-builder -f ./Dockerfile-build ./
       - name: Publish 3.11 to Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: datastax/cassandra-mgmtapi-3_11_6
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -21,7 +21,7 @@ jobs:
           tag_names: true
           dockerfile: Dockerfile-3_11
       - name: Publish 4.0 to Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: datastax/cassandra-mgmtapi-4_0_0
           username: ${{ secrets.DOCKER_USERNAME }}
